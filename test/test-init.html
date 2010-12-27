@@ -1,0 +1,26 @@
+<?jspp.init
+  resource.cache = function (hash, cb) {    
+    this.page.asd = 'asdfasdf';
+    cb(null);
+  };
+  end();
+?>
+<html>
+  <head>
+    <title>Test page</title>
+  </head>
+  
+  <body>
+    <div class="test1">
+      <script type="application/jspp">
+        $(this).text(page.asd); 
+        end(); 
+      </script>
+    </div>
+    
+    <script>
+      console.log("This should not show up!")
+    </script>
+  </body>
+  
+</html>
