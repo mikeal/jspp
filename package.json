@@ -1,12 +1,13 @@
 { "name" : "jspp"
 , "description" : "JavaScript Pre-Processor."
 , "tags" : ["jspp", "webframework", "template", "php"]
-, "version" : "0.0.1"
+, "version" : "0.1.0"
 , "author" : "Mikeal Rogers <mikeal.rogers@gmail.com>"
 , "engines" : ["node >=0.3.1"]
 , "main" : "./lib/main"
 , "dependencies": 
   { "watch": ">=0.3.0"
+  , "jsdom": ">=0.1.20"
   }
 , "bin": { "jspp" : "./bin.js" }
 }

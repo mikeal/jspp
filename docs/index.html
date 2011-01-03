@@ -285,7 +285,7 @@
               <p>When you're in an html file you get most of the normal browser environments. window, document, and other objects are available. You also have a jQuery object at <span class="excode">$</span> that you can use to manipulate any part of the page.</p>
               <p>Inside a jspp block <span class="excode">this</span> refers to the current DOM node.</p>
               <p><span class="excode">console.log</span> is also available for debug logging in the server.</p>
-              <p>Every block has an <span class="excode">end</span> function that must be called to end that blocks processing of the page</p>
+              <p>Every block has an <span class="excode">end</span> function that must be called to end that blocks processing of the page, future versions of node.js may allow us access to the event system that will allow us to remove this requirement.</p>
               <p>There are many other jspp objects that are scoped to the resource and the page: <span class="excode"><a href="#api-resource">resource</a>, <a href="#api-request">request</a>, <a href="#api-response">response</a>, <a href="#api-page">page</a>, <a href="#api-setHeader">setHeader</a>,</span> and<span class="excode"> <a href="#api-require">require</a></span>.</p>
               <p>The require function allows you to import any node.js modules you would like. Relative module imports, like <span class="excode">require('./module')</span>, are scoped to the directory the file is in.</p>
             </div>
