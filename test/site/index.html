@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Test page</title>
+  </head>
+  
+  <body>
+    <div class="test1">
+      <?jspp console.log(document.title); end(); ?>
+    </div>
+    <div class="test2">
+      <script type="application/jspp">
+        require("request");
+        $(this).text(require("./module").exp); 
+        end();
+      </script>
+    </div>
+    
+    <script>
+      console.log("This should not show up!");
+    </script>
+  </body>
+  
+</html>

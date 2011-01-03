@@ -1,0 +1,32 @@
+html {
+  font-family:Verdana;<?jspp page.text = "background-color"; end(); ?>
+}
+div.request-item {
+  width:100%;
+}
+div.request-key {
+  width:20%;
+  float:left;
+}
+div.request-value {
+  width:80%;
+  float:left;
+}
+div.spacer {
+  clear:both;
+}
+div.k0 {
+  <?jspp write(page.text); end(); ?>:#FF7000;
+}
+div.k1 {
+  <?jspp write(page.text); end(); ?>:#FF8000;
+}
+div.k2 {
+  <?jspp write(page.text); end(); ?>:#FF9000;
+}
+div.k3 {
+  <?jspp write(page.text); end(); ?>:#FF9999;
+}
+div.request-value {
+  <?jspp write(page.text); end(); ?>:#1874CD;
+}

@@ -1,0 +1,434 @@
+<html>
+  <head>
+    <title>jspp</title>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3515839-11']);
+      _gaq.push(['_setDomainName', '.jspp.io']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <style type="text/css">
+      @font-face {
+        font-family: 'Crimson Text';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Crimson Text'), local('CrimsonText-Roman'), url('http://themes.googleusercontent.com/font?kit=3IFMwfRa07i-auYR-B-zNYnF5uFdDttMLvmWuJdhhgs') format('truetype');
+      }
+      @font-face {
+        font-family: 'Philosopher';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Philosopher'), url('http://themes.googleusercontent.com/font?kit=OttjxgcoEsufOGSINYBGLZ0EAVxt0G0biEntp43Qt6E') format('truetype');
+      }
+      @font-face {
+        font-family: 'Inconsolata';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Inconsolata'), url('http://themes.googleusercontent.com/font?kit=BjAYBlHtW3CJxDcjzrnZCJ0EAVxt0G0biEntp43Qt6E') format('truetype');
+      }
+      @font-face {
+        font-family: 'Ubuntu';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Ubuntu'), local('Ubuntu-Regular'), url('http://themes.googleusercontent.com/font?kit=2Q-AW1e_taO6pHwMXcXW5w') format('truetype');
+      }
+      @font-face {
+        font-family: 'Droid Sans';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Droid Sans'), local('DroidSans'), url('http://themes.googleusercontent.com/font?kit=s-BiyweUPV0v-yRb-cjciC3USBnSvpkopQaUR-2r7iU') format('truetype');
+      }
+      html {
+        font-family:Crimson Text;
+      }
+      div#main {
+        margin-top:0px;
+      }
+      body {
+        margin:0px 0px 0px 0px;
+      }
+      div#top-color {
+        width:100%;
+        background-color:#CDD2D5;
+        height:5px;
+      }
+      div.content {
+        width:100%;
+        margin-top:0px;
+        background-color:#D5DED9;
+        height:330px;
+      }
+      div.section {
+        float:left;
+        margin-top:0px;
+        margin-left:5%;
+        width:44%;
+        background-color:#D9CEB2;
+        border-right-style:dashed;
+        border-right-color:#948C75;
+        border-left-style:dashed;
+        border-left-color:#948C75;
+        color:#5C5346;
+        height:100%;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+        text-shadow: 1px 1px 1px #ECE5D5;
+        font-size: 150%;
+      }
+      div.jspp-title {
+        font-size:85px;
+        text-align:center;
+        padding-top:30px;
+        font-style:italic;
+        font-family:Philosopher;
+      }
+      div.jspp-desc {
+        padding-top:20px;
+        text-align:center;
+        font-size:35px;
+      }
+      div.jspp-long-desc {
+        padding-right:15px;
+        padding-left:15px;
+        padding-top:20px;
+        font-size:20px;
+      }
+      div.desc-head {
+        font-size:20px;
+        font-family:Philosopher;
+        margin: 10px 0px 5px 15px;
+      }
+      .code {
+        font-size:18px;
+        font-family:Inconsolata;
+        margin-top:0px;
+        margin-left:7px;
+        margin-right:3px;
+        margin-bottom:25px;
+        padding: 3px 3px 3px 5px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        background-color:#ECE5D5;
+        color:black;
+        box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.6);
+      } 
+      pre.code {
+        font-size:14px;
+      }
+      div#navigation {
+        width:100%;
+        height:40px;
+        background-color:#CDD2D5;
+        display:block;
+        clear:both;
+        border-top-style:solid;
+        border-top-color:#D5DED9;
+        z-index:3;
+      }
+      div.nav-item {
+        float:left;
+        height:100%;
+        margin: 0px 0px 0px 35px;
+        padding: 0px 7px 0px 7px;
+        font-size:30px;
+        background-color:#D5DED9;
+        text-shadow: -1px -1px 1px #D9CEB2;
+      }
+      div.nav-item a:link, div.nav-item a:visited {
+        color:#5C5346;
+        text-decoration:none;
+      }
+      /*Docs*/
+      div#docs {
+        padding-top:10px;
+        background-color:#5C5346;
+        color:#D9CEB2;
+        width:100%;
+      }
+      div#docs a:visited, div#docs a:link {
+        text-decoration:none;
+        color:#78C5B4;
+      }
+      div.doc-head {
+        font-size:40px;
+        font-family:Philosopher;
+        margin: 10px 10px 10px 10px;
+      }
+      div.doc-section {
+        font-size:18px;
+        font-family:Droid Sans;
+        width:97%;
+        margin-bottom:30px;
+      }
+      div.doc-desc {
+        float:left;
+        width:47%;
+        padding-left:2%;
+      }
+      div.doc-example {
+        float:left;
+        padding-left:2%;
+        width:47%;
+      }
+      span.excode {
+        font-family:Inconsolata;
+        color:white;
+        font-size:20px;
+      }
+      div.doc-example .code {
+        line-height:1.3;
+        width:100%;
+      }
+      div.full-desc {
+        margin-left:15px;
+        margin-right:15px;
+      }
+      div.ref-head {
+        font-size:30px;
+        font-family:Philosopher;
+        color:#857C94;
+        margin: 10px 10px 10px 10px;
+      }
+      
+      div.spacer {
+        clear:both;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="top-color"></div>
+      <div class="content">
+        <div class="section">
+          <div class="jspp-title">jspp</div>
+          <div class="jspp-desc">JavaScript Pre-Processor</div>
+          <div class="jspp-long-desc">A simple way to build web applications with embedded server side JavaScript. In a few minutes you can build dynamic backend logic in to any page (html, css, etc) using node.js, jQuery and server side DOM with php-like embedded code.</div>
+        </div>
+        <div class="section">
+          <div class="desc-head">Install</div>
+          <div class="code">$ npm install jspp</div>
+          <div class="desc-head">Write</div>
+          <pre class="code" style="color:#000000;"># index.html
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"test1"</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp</span> <span style="color:#000000">$</span><span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span><span style="color:#0000e6; ">"This is server side!"</span><span style="color:#808030; ">)</span><span style="color:#800080; "> </span><span style="color:#a65700; ">?&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span></pre>
+          <div class="desc-head">Run</div>
+          <div class="code">$ jspp serve .</div>
+        </div>
+        <div class="spacer"></div>
+      </div>
+      <div id="navigation">
+        <div class="nav-item"><a href="#install">Install</a></div>
+        <div class="nav-item"><a href="#basic">Basic</a></div>
+        <div class="nav-item"><a href="#caching">Caching</a></div>
+        <!-- <div class="nav-item"><a href="#serving">Serving</a></div> -->
+        <div class="nav-item"><a href="#reference">Reference</a></div>
+      </div>
+      <div id="docs">
+        <div class="doc-head" id="install">Install</div>
+        <div class="doc-section">
+          <div class="doc-desc">If you don't already have node.js installed, you'll need to. Documentation about getting and installing node can be found <a href="">here</a>.</p>
+            <p>Node is also available through most package managers.
+          </div>
+          <div class="doc-example">
+            <div class="code">
+              $ curl -O http://nodejs.org/dist/node-v0.3.2.tar.gz<br>
+              $ ./configure<br>
+              $ make && make install<br>
+            </div>
+          </div>
+          <div class="spacer"></div>
+        </div>
+        <div class="spacer"></div>
+        
+        <div class="doc-section">
+          <div class="doc-desc">If you don't already have npm installed you'll also to get it.</div>
+          <div class="doc-example"><div class="code">$ curl http://npmjs.org/install.sh | sh</div></div>
+          <div class="spacer"></div>
+        </div>
+        <div class="spacer"></div>
+        
+        <div class="doc-section">
+          <div class="doc-desc">Now all you need to do is tell npm to install jspp.</div>
+          <div class="doc-example"><div class="code">$ npm install jspp</div></div>
+          <div class="spacer"></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="doc-head" id="basic">Basic Usage</div>
+          <div class="doc-section">
+            <div class="doc-desc">First thing you'll want to do is run the jspp server against your working directory.
+              <p>Any changes you make in the working directory are automatically picked up by the server and refreshed. No need to start and stop during development or even in production</p>
+            </div>
+            <div class="doc-example"><div class="code">$ jspp serve .</div></div>
+            <div class="spacer"></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="doc-section">
+            <div class="doc-desc">Now create an index.html and fill it with content.
+              <p>You can embed server side processing in <span class="excode">&lt;?jspp</span> style tags or in script tags with a content type of <span class="excode">"application/jspp"</span>. Script style tags are only available in html documents and don't work for <span class="excode">jspp.init</span> definitions.</p>
+              <p>When you're in an html file you get most of the normal browser environments. window, document, and other objects are available. You also have a jQuery object at <span class="excode">$</span> that you can use to manipulate any part of the page.</p>
+              <p>Inside a jspp block <span class="excode">this</span> refers to the current DOM node.</p>
+              <p><span class="excode">console.log</span> is also available for debug logging in the server.</p>
+              <p>Every block has an <span class="excode">end</span> function that must be called to end that blocks processing of the page</p>
+              <p>There are many other jspp objects that are scoped to the resource and the page: <span class="excode"><a href="#api-resource">resource</a>, <a href="#api-request">request</a>, <a href="#api-response">response</a>, <a href="#api-page">page</a>, <a href="#api-setHeader">setHeader</a>,</span> and<span class="excode"> <a href="#api-require">require</a></span>.</p>
+              <p>The require function allows you to import any node.js modules you would like. Relative module imports, like <span class="excode">require('./module')</span>, are scoped to the directory the file is in.</p>
+            </div>
+            <div class="doc-example" style="font-size:28px;"><pre class="code" style="font-size:18px;color:#000000"><span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>Test page<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">title</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">head</span><span style="color:#a65700; ">&gt;</span>
+
+  <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"test1"</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp</span> <span style="color:#000000;">console</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span>document<span style="color:#808030; ">.</span>title<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> <span style="color:#a65700; ">?&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">class</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"test2"</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script type="application/jspp"</span><span style="color:#a65700; ">&gt;</span>
+        require<span style="color:#808030; ">(</span><span style="color:#0000e6; ">"request"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>text<span style="color:#808030; ">(</span>require<span style="color:#808030; ">(</span><span style="color:#0000e6; ">"./module"</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">text</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span> 
+        end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+      <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+      console<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">log</span><span style="color:#808030; ">(</span><span style="color:#0000e6; ">"This should not show up!"</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span></pre>
+            </div>
+            <div class="spacer"></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="doc-section">
+            <div class="doc-desc">You can also use jspp in other files like css.
+            <p>For obvious reasons there is no window, document, or jQuery object available. You do still have <span class="excode">console, <a href="#api-resource">resource</a>, <a href="#api-request">request</a>, <a href="#api-response">response</a>, <a href="#api-page">page</a>, <a href="#api-setHeader">setHeader</a>,</span> and<span class="excode"> <a href="#api-require">require</a></span>.</p>
+            <p>You can use the <span class="excode">write</span> function to insert text where the jspp block is located.</p>
+            </div>
+            <div class="doc-example">
+
+<pre class="code" style="color:#000000;"><span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp</span> page<span style="color:#808030; ">.</span>color <span style="color:#808030; ">=</span> <span style="color:#0000e6; ">"#FF7000"</span>; end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>;<span style="color:#a65700; "> ?&gt;</span>
+<span style="color:#800000; font-weight:bold; ">html</span> <span style="color:#800080; ">{</span>
+  <span style="color:#bb7977; font-weight:bold; ">font-family</span><span style="color:#808030; ">:</span>Verdana<span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">div</span> <span style="color:#800080; ">{</span>
+  <span style="color:#bb7977; font-weight:bold; ">color</span><span style="color:#808030; ">:</span><span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp</span> write<span style='color:#808030; '>(</span>page<span style='color:#808030; '>.</span>color<span style='color:#808030; '>)</span>; end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>; <span style="color:#a65700; ">?&gt;</span><span style="color:#800080; ">;</span>
+<span style="color:#800080; ">}</span>
+<span style="color:#800000; font-weight:bold; ">span</span> <span style="color:#800080; ">{</span>
+  <span style="color:#bb7977; font-weight:bold; ">color</span><span style="color:#808030; ">:</span><span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp</span> write<span style='color:#808030; '>(</span>page<span style='color:#808030; '>.</span>color<span style='color:#808030; '>)</span> end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span>; <span style="color:#a65700; ">?&gt;</span><span style="color:#800080; ">;</span></span>
+<span style="color:#800080; ">}</span>
+</pre>
+            </div>
+            <div class="spacer"></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="doc-head" id="caching">Caching</div>
+          <div class="full-desc doc-section">
+            <p>Because jspp holds the request processing, application stack, and the HTTP server it contains a lot more caching support than you might expect.</p>
+            <p>All caching in jspp caches the response body (when not over the limit) and returns a proper etag. jspp will respond with a 304 response to any conditional GETs when the etag is matched</p>
+            <p>All file responses under the cacheLimit are already cached. Any file response that contains no jspp blocks other than jspp.init are already cached. All resource instances are cached by url, including query string.</p>
+          </div>
+          <div class="spacer"></div>
+          <div class="doc-section">
+            <div class="doc-desc">And finally, jspp supports user defined cache functions.
+              <p>The <span class="excode">&lt;?jspp.init</span> block is called only once during the creation of a resource. This is used to enable any configuration options or constants for that resource. The window, document, and jQuery objects are not accessible</p>
+              <p><span class="excode">resource.cache</span> is called on every new request for a resource. It takes two arguments, the current etag hash for that resource and a callback. The cache function must call the callback with the new etag hash. If the resource cannot support caching for any reason it can pass null to the callback. It does not have window, document, or jQuery objects available but it does have <a href="#api-request">request</a>, <a href="#api-response">response</a>, <a href="#api-page">page</a>, and <a href="#api-setHeader">setHeader</a></span> available as properties of <span class="excode">this</span> in addition to what is already in the scope from when it was defined in the <span class="excode">&lt;?jspp.init</span> block.</p>
+              <p>If <span class="excode">resource.cache</span> responds with the existing etag then the cached response will be returned.</p>
+              <p>Because <span class="excode">resource.cache</span> is run before every request, and no jspp blocks are run before it's finished, you can use it for page initialization when it makes sense.</p>
+              <p>You are only allowed to define one <span class="excode">&lt;?jspp.init</span> block.
+            </div>
+            <div class="doc-example">
+<pre style="color:#000000" class="code"><span style="color:#a65700; ">&lt;?</span><span style="color:#800000; font-weight:bold; ">jspp.init</span>
+  <span style="color:#800000; font-weight:bold; ">var</span> request <span style="color:#808030; ">=</span> require<span style="color:#808030; ">(</span><span style="color:#0000e6; ">'request'</span><span style="color:#808030; ">)</span>
+    <span style="color:#808030; ">,</span> couch <span style="color:#808030; ">=</span> <span style="color:#0000e6; ">'http://localhost:5984/db/_all_docs'</span>
+    <span style="color:#800080; ">;</span>
+  resource<span style="color:#808030; ">.</span>cache <span style="color:#808030; ">=</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span>hash<span style="color:#808030; ">,</span> cb<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+    <span style="color:#800000; font-weight:bold; ">var</span> h <span style="color:#808030; ">=</span> <span style="color:#800080; ">{</span><span style="color:#0000e6; ">'content-type'</span><span style="color:#800080; ">:</span><span style="color:#0000e6; ">'application/json'</span><span style="color:#800080; ">}</span>
+    <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span>hash<span style="color:#808030; ">)</span> headers<span style="color:#808030; ">[</span><span style="color:#0000e6; ">'if-none-match'</span><span style="color:#808030; ">]</span> <span style="color:#808030; ">=</span> hash<span style="color:#800080; ">;</span>
+    <span style="color:#696969; ">// Get all doc id's from CouchDB if not modified</span>
+    request<span style="color:#808030; ">(</span><span style="color:#800080; ">{</span>uri<span style="color:#800080; ">:</span>couch<span style="color:#808030; ">,</span> headers<span style="color:#800080; ">:</span>h<span style="color:#800080; ">}</span><span style="color:#808030; ">,</span> <span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span>e<span style="color:#808030; ">,</span> resp<span style="color:#808030; ">,</span> body<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+      <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span>e<span style="color:#808030; ">)</span> <span style="color:#800000; font-weight:bold; ">throw</span> e<span style="color:#800080; ">;</span>
+      <span style="color:#800000; font-weight:bold; ">if</span> <span style="color:#808030; ">(</span>resp<span style="color:#808030; ">.</span>statusCode <span style="color:#808030; ">===</span> <span style="color:#008c00; ">304</span><span style="color:#808030; ">)</span> <span style="color:#800000; font-weight:bold; ">return</span> cb<span style="color:#808030; ">(</span>hash<span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+      <span style="color:#800000; font-weight:bold; ">else</span> <span style="color:#800080; ">{</span>
+        page<span style="color:#808030; ">.</span>docs <span style="color:#808030; ">=</span> JSON<span style="color:#808030; ">.</span><span style="color:#800000; font-weight:bold; ">parse</span><span style="color:#808030; ">(</span>body<span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>rows<span style="color:#800080; ">;</span>
+        cb<span style="color:#808030; ">(</span>resp<span style="color:#808030; ">.</span>etag <span style="color:#808030; ">||</span> <span style="color:#0f4d75; ">null</span><span style="color:#808030; ">)</span>
+      <span style="color:#800080; ">}</span>
+    <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+  <span style="color:#800080; ">}</span>
+<span style="color:#a65700; ">?&gt;</span>
+<span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#274796; "> </span><span style="color:#074726; ">id</span><span style="color:#808030; ">=</span><span style="color:#0000e6; ">"documents"</span><span style="color:#a65700; ">&gt;</span>
+      <span style="color:#a65700; ">&lt;</span><span style="color:#800000; font-weight:bold; ">script type="application/jspp"</span><span style="color:#a65700; ">&gt;</span>
+        page<span style="color:#808030; ">.</span>docs<span style="color:#808030; ">.</span>forEach<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">function</span> <span style="color:#808030; ">(</span>row<span style="color:#808030; ">)</span> <span style="color:#800080; ">{</span>
+          $<span style="color:#808030; ">(</span><span style="color:#800000; font-weight:bold; ">this</span><span style="color:#808030; ">)</span><span style="color:#808030; ">.</span>append<span style="color:#808030; ">(</span>
+            <span style="color:#0000e6; ">'&lt;div&gt;&lt;a href="/item/"'</span><span style="color:#808030; ">+</span>row<span style="color:#808030; ">.</span>id<span style="color:#808030; ">+</span><span style="color:#0000e6; ">'&lt;/a&gt;'</span><span style="color:#808030; ">+</span>row<span style="color:#808030; ">.</span>id<span style="color:#808030; ">+</span><span style="color:#0000e6; ">'&lt;/div&gt;'</span>
+          <span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+        <span style="color:#800080; ">}</span><span style="color:#808030; ">)</span>
+        end<span style="color:#808030; ">(</span><span style="color:#808030; ">)</span><span style="color:#800080; ">;</span>
+      <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">script</span><span style="color:#a65700; ">&gt;</span>
+    <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">div</span><span style="color:#a65700; ">&gt;</span>
+  <span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">body</span><span style="color:#a65700; ">&gt;</span>
+<span style="color:#a65700; ">&lt;/</span><span style="color:#800000; font-weight:bold; ">html</span><span style="color:#a65700; ">&gt;</span>
+</pre>
+            </div>
+            <div class="spacer"></div>
+          </div>
+          <div class="spacer"></div>
+          <div class="doc-head" id="reference">Reference</div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-request">request</div>
+            <p>The HTTP request object. Instance of <a href="http://nodejs.org/api.html#http-serverrequest-171">http.ServerRequest</a></p>
+            <p>Not available in jspp.init. Available in all other jspp blocks.</p>
+          </div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-response">response</div>
+            <p>The HTTP response object. Instance of <a href="http://nodejs.org/api.html#http-serverresponse-183">http.ServerResponse</a></p>
+            <p>Experimental, may be removed. Manipulating this object will most likely result in breakage somewhere in jspp but while jspp is under heavy development it may be useful.</p>
+            <p>Not available in jspp.init. Available in all other jspp blocks.</p>
+          </div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-page">page</div>
+            <p>This object is for any globals related to current page for the current request.</p>
+            <p>Not available in jspp.init. Available in all other jspp blocks.</p>
+          </div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-setHeader">setHeader</div>
+            <p>Function. Set's a given response header. setHeader(key, value).</p>
+            <p>Not available in jspp.init. Available in all other jspp blocks.</p>
+          </div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-require">require</div>
+            <p>Function. Returns a node.js module.</p>
+            <p>This is a simple wrapper around the default node.js require function that scopes relative imports to the directory of the file it's called from.</p>
+            <p>Available in all jspp blocks including jspp.init.</p>
+          </div>
+          <div class="full-desc doc-section">
+            <div class="ref-head" id="api-resource">resource</div>
+            <p>The resource instance for the current resource.</p>
+            <p>This object contains all the file, cache, and rendering information for the page. An instance is created for each unique url which means that querystring arguments create new instances of a given resource for each unique url, they are then held in cache for performance purposes.</p>
+            <p>There are some important attributes on this object. <span class="excode">url</span> is the result of <a href="">url.parse</a> for the full request url including hostname. <span class="excode">cache</span> is a user defined function to handle cache control, if it is not defined in jspp.init one will be set by jspp with the default caching semantics.</p>
+            <p>Available in all jspp blocks including jspp.init.</p>
+          </div>
+            
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/mikeal/jspp"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://assets1.github.com/img/ce742187c818c67d98af16f96ed21c00160c234a?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_left_gray_6d6d6d.png&path=" alt="Fork me on GitHub"></a>
+  </body>
+</html>

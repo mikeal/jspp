@@ -1,0 +1,31 @@
+<?jspp
+  var request = require('request')
+    , couch = 'http://localhost:5984/db/_all_docs'
+    ;
+  resource.cache = function (hash, cb) {
+    var h = {'content-type':'application/json'}
+    if (hash) headers['if-none-match'] = hash;
+    // Get all doc id's from CouchDB if not modified
+    request({uri:couch, headers:h}, function (e, resp, body) {
+      if (e) throw e;
+      if (resp.statusCode === 304) return cb(hash);
+      else {
+        page.docs = JSON.parse(body).rows;
+        cb(resp.etag || null)
+      }
+    })
+  }
+?>
+<html>
+  <body>
+    <div id="documents">
+      <script type="application/jspp">
+        page.docs.forEach(function (row) {
+          $(this).append(
+            '<div><a href="/item/"'+row.id+'</a>'+row.id+'</div>'
+          );
+        })
+      </script>
+    </div>
+  </body>
+</html>
