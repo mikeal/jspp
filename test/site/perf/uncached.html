@@ -1,0 +1,20 @@
+<?jspp 
+  resource.cache = function (hash, cb) {cb(null)};
+  end();
+?>
+<html>
+  <head>
+    <title>Hello World!</title>
+  </head>
+  
+  <body>
+    <div class="test1">
+      <?jspp $(this).text(Math.random()); end(); ?>
+    </div>
+    
+    <script>
+      console.log("This should not show up!");
+    </script>
+  </body>
+  
+</html>

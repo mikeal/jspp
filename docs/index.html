@@ -35,12 +35,6 @@
         src: local('Inconsolata'), url('http://themes.googleusercontent.com/font?kit=BjAYBlHtW3CJxDcjzrnZCJ0EAVxt0G0biEntp43Qt6E') format('truetype');
       }
       @font-face {
-        font-family: 'Ubuntu';
-        font-style: normal;
-        font-weight: normal;
-        src: local('Ubuntu'), local('Ubuntu-Regular'), url('http://themes.googleusercontent.com/font?kit=2Q-AW1e_taO6pHwMXcXW5w') format('truetype');
-      }
-      @font-face {
         font-family: 'Droid Sans';
         font-style: normal;
         font-weight: normal;
@@ -248,7 +242,7 @@
       <div id="docs">
         <div class="doc-head" id="install">Install</div>
         <div class="doc-section">
-          <div class="doc-desc">If you don't already have node.js installed, you'll need to. Documentation about getting and installing node can be found <a href="">here</a>.</p>
+          <div class="doc-desc">If you don't already have node.js installed, you'll need to. Documentation about getting and installing node can be found <a href="http://nodejs.org/#build">here</a>.</p>
             <p>Node is also available through most package managers.
           </div>
           <div class="doc-example">
@@ -263,7 +257,7 @@
         <div class="spacer"></div>
         
         <div class="doc-section">
-          <div class="doc-desc">If you don't already have npm installed you'll also to get it.</div>
+          <div class="doc-desc">If you don't already have npm installed you'll also need to get it.</div>
           <div class="doc-example"><div class="code">$ curl http://npmjs.org/install.sh | sh</div></div>
           <div class="spacer"></div>
         </div>
@@ -278,7 +272,7 @@
         <div class="doc-head" id="basic">Basic Usage</div>
           <div class="doc-section">
             <div class="doc-desc">First thing you'll want to do is run the jspp server against your working directory.
-              <p>Any changes you make in the working directory are automatically picked up by the server and refreshed. No need to start and stop during development or even in production</p>
+              <p>Any changes you make in the working directory are automatically picked up by the server and refreshed. No need to start and stop during development or even in production.</p>
             </div>
             <div class="doc-example"><div class="code">$ jspp serve .</div></div>
             <div class="spacer"></div>
@@ -345,13 +339,13 @@
           <div class="doc-head" id="caching">Caching</div>
           <div class="full-desc doc-section">
             <p>Because jspp holds the request processing, application stack, and the HTTP server it contains a lot more caching support than you might expect.</p>
-            <p>All caching in jspp caches the response body (when not over the limit) and returns a proper etag. jspp will respond with a 304 response to any conditional GETs when the etag is matched</p>
+            <p>All caching in jspp caches the response body (when not over the limit) and returns a proper etag. jspp will respond with a 304 response to any conditional GETs when the etag is matched.</p>
             <p>All file responses under the cacheLimit are already cached. Any file response that contains no jspp blocks other than jspp.init are already cached. All resource instances are cached by url, including query string.</p>
           </div>
           <div class="spacer"></div>
           <div class="doc-section">
             <div class="doc-desc">And finally, jspp supports user defined cache functions.
-              <p>The <span class="excode">&lt;?jspp.init</span> block is called only once during the creation of a resource. This is used to enable any configuration options or constants for that resource. The window, document, and jQuery objects are not accessible</p>
+              <p>The <span class="excode">&lt;?jspp.init</span> block is called only once during the creation of a resource. This is used to enable any configuration options or constants for that resource. The window, document, and jQuery objects are not accessible.</p>
               <p><span class="excode">resource.cache</span> is called on every new request for a resource. It takes two arguments, the current etag hash for that resource and a callback. The cache function must call the callback with the new etag hash. If the resource cannot support caching for any reason it can pass null to the callback. It does not have window, document, or jQuery objects available but it does have <a href="#api-request">request</a>, <a href="#api-response">response</a>, <a href="#api-page">page</a>, and <a href="#api-setHeader">setHeader</a></span> available as properties of <span class="excode">this</span> in addition to what is already in the scope from when it was defined in the <span class="excode">&lt;?jspp.init</span> block.</p>
               <p>If <span class="excode">resource.cache</span> responds with the existing etag then the cached response will be returned.</p>
               <p>Because <span class="excode">resource.cache</span> is run before every request, and no jspp blocks are run before it's finished, you can use it for page initialization when it makes sense.</p>
